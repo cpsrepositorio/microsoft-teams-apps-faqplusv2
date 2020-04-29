@@ -35,20 +35,20 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Cards
                 },
                 Actions = new List<AdaptiveAction>
                 {
-                    new AdaptiveSubmitAction
-                    {
-                        Title = Strings.AskAnExpertButtonText,
-                        Data = new ResponseCardPayload
-                        {
-                            MsTeams = new CardAction
-                            {
-                                Type = ActionTypes.MessageBack,
-                                DisplayText = Strings.AskAnExpertDisplayText,
-                                Text = Constants.AskAnExpert,
-                            },
-                            UserQuestion = userQuestion,
-                        },
-                    },
+                    // new AdaptiveSubmitAction
+                    // {
+                    //     Title = Strings.AskAnExpertButtonText,
+                    //     Data = new ResponseCardPayload
+                    //     {
+                    //         MsTeams = new CardAction
+                    //         {
+                    //             Type = ActionTypes.MessageBack,
+                    //             DisplayText = Strings.AskAnExpertDisplayText,
+                    //             Text = Constants.AskAnExpert,
+                    //         },
+                    //         UserQuestion = userQuestion,
+                    //     },
+                    // },
                 },
             };
 

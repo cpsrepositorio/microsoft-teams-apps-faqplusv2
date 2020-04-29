@@ -1432,10 +1432,10 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Bots
                     }
                 }
 
-                // else
-                // {
-                //     await turnContext.SendActivityAsync(MessageFactory.Attachment(UnrecognizedInputCard.GetCard(text))).ConfigureAwait(false);
-                // }
+                else
+                {
+                    await turnContext.SendActivityAsync(MessageFactory.Attachment(UnrecognizedInputCard.GetCard(text))).ConfigureAwait(false);
+                }
             }
             catch (Exception ex)
             {
