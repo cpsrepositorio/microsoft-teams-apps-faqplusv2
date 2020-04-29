@@ -981,22 +981,22 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Cards
                     });
             }
 
-            responseCard.Actions.Add(
-                   new AdaptiveSubmitAction
-                   {
-                       Title = Strings.AskAnExpertButtonText,
-                       Data = new ResponseCardPayload
-                       {
-                           MsTeams = new CardAction
-                           {
-                               Type = ActionTypes.MessageBack,
-                               DisplayText = Strings.AskAnExpertDisplayText,
-                               Text = Constants.AskAnExpert,
-                           },
-                           UserQuestion = userQuestion,
-                           KnowledgeBaseAnswer = answerModel?.Description,
-                       },
-                   });
+            // responseCard.Actions.Add(
+            //        new AdaptiveSubmitAction
+            //        {
+            //            Title = Strings.AskAnExpertButtonText,
+            //            Data = new ResponseCardPayload
+            //            {
+            //                MsTeams = new CardAction
+            //                {
+            //                    Type = ActionTypes.MessageBack,
+            //                    DisplayText = Strings.AskAnExpertDisplayText,
+            //                    Text = Constants.AskAnExpert,
+            //                },
+            //                UserQuestion = userQuestion,
+            //                KnowledgeBaseAnswer = answerModel?.Description,
+            //            },
+            //        });
 
             responseCard.Actions.Add(
                    new AdaptiveSubmitAction
