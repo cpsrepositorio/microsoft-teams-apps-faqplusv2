@@ -418,7 +418,7 @@
     <comment>Texto de notificação enviada para o usuário que abriu a solicitação quando esta for reaberta.</comment>
   </data>
   <data name="ResponseHeaderText" xml:space="preserve">
-    <value>Aqui está o que eu encontrei:</value>
+    <value>Aqui está o que eu achei:</value>
     <comment>Notificação informando ao usuário que uma resposta é gerada para sua solicitação a partir do Gerenciador de  P&amp;R.</comment>
   </data>
   <data name="ResultsFeedbackText" xml:space="preserve">
