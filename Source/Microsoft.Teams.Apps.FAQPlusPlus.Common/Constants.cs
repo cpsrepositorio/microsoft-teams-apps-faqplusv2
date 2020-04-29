@@ -68,7 +68,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Common
         /// <summary>
         /// TakeAtour - text that triggers take a tour action for the user.
         /// </summary>
-        public const string TakeATour = "Faça uma visita";
+        public const string TakeATour = "Conhecer recursos";
 
         /// <summary>
         /// AskAnExpert - text that renders the ask an expert card.

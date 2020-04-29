@@ -772,10 +772,10 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Bots
 
             switch (text)
             {
-                case Constants.AskAnExpert:
-                    this.logger.LogInformation("Sending user ask an expert card");
-                    await turnContext.SendActivityAsync(MessageFactory.Attachment(AskAnExpertCard.GetCard())).ConfigureAwait(false);
-                    break;
+                // case Constants.AskAnExpert:
+                //     this.logger.LogInformation("Sending user ask an expert card");
+                //     await turnContext.SendActivityAsync(MessageFactory.Attachment(AskAnExpertCard.GetCard())).ConfigureAwait(false);
+                //     break;
 
                 case Constants.ShareFeedback:
                     this.logger.LogInformation("Sending user feedback card");
@@ -891,11 +891,11 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Bots
 
             switch (message?.Text)
             {
-                case Constants.AskAnExpert:
-                    this.logger.LogInformation("Sending user ask an expert card (from answer)");
-                    var askAnExpertPayload = ((JObject)message.Value).ToObject<ResponseCardPayload>();
-                    await turnContext.SendActivityAsync(MessageFactory.Attachment(AskAnExpertCard.GetCard(askAnExpertPayload))).ConfigureAwait(false);
-                    break;
+                // case Constants.AskAnExpert:
+                //     this.logger.LogInformation("Sending user ask an expert card (from answer)");
+                //     var askAnExpertPayload = ((JObject)message.Value).ToObject<ResponseCardPayload>();
+                //     await turnContext.SendActivityAsync(MessageFactory.Attachment(AskAnExpertCard.GetCard(askAnExpertPayload))).ConfigureAwait(false);
+                //     break;
 
                 case Constants.ShareFeedback:
                     this.logger.LogInformation("Sending user share feedback card (from answer)");
@@ -903,16 +903,16 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Bots
                     await turnContext.SendActivityAsync(MessageFactory.Attachment(ShareFeedbackCard.GetCard(shareFeedbackPayload))).ConfigureAwait(false);
                     break;
 
-                case AskAnExpertCard.AskAnExpertSubmitText:
-                    this.logger.LogInformation("Received question for expert");
-                    newTicket = await AdaptiveCardHelper.AskAnExpertSubmitText(message, turnContext, cancellationToken, this.ticketsProvider).ConfigureAwait(false);
-                    if (newTicket != null)
-                    {
-                        smeTeamCard = new SmeTicketCard(newTicket).ToAttachment(message?.LocalTimestamp);
-                        userCard = new UserNotificationCard(newTicket).ToAttachment(Strings.NotificationCardContent, message?.LocalTimestamp);
-                    }
-
-                    break;
+                // case AskAnExpertCard.AskAnExpertSubmitText:
+                //     this.logger.LogInformation("Received question for expert");
+                //     newTicket = await AdaptiveCardHelper.AskAnExpertSubmitText(message, turnContext, cancellationToken, this.ticketsProvider).ConfigureAwait(false);
+                //     if (newTicket != null)
+                //     {
+                //         smeTeamCard = new SmeTicketCard(newTicket).ToAttachment(message?.LocalTimestamp);
+                //         userCard = new UserNotificationCard(newTicket).ToAttachment(Strings.NotificationCardContent, message?.LocalTimestamp);
+                //     }
+                //
+                //     break;
 
                 case ShareFeedbackCard.ShareFeedbackSubmitText:
                     this.logger.LogInformation("Received app feedback");
@@ -1431,27 +1431,28 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Bots
                         await turnContext.SendActivityAsync(MessageFactory.Attachment(ResponseCard.GetCard(answerData.Questions.FirstOrDefault(), answerData.Answer, text))).ConfigureAwait(false);
                     }
                 }
-                else
-                {
-                    await turnContext.SendActivityAsync(MessageFactory.Attachment(UnrecognizedInputCard.GetCard(text))).ConfigureAwait(false);
-                }
+
+                // else
+                // {
+                //     await turnContext.SendActivityAsync(MessageFactory.Attachment(UnrecognizedInputCard.GetCard(text))).ConfigureAwait(false);
+                // }
             }
             catch (Exception ex)
             {
                 // Check if knowledge base is empty and has not published yet when end user is asking a question to bot.
-                if (((ErrorResponseException)ex).Response.StatusCode == HttpStatusCode.BadRequest)
-                {
-                    var knowledgeBaseId = await this.configurationProvider.GetSavedEntityDetailAsync(Constants.KnowledgeBaseEntityId).ConfigureAwait(false);
-                    var hasPublished = await this.qnaServiceProvider.GetInitialPublishedStatusAsync(knowledgeBaseId).ConfigureAwait(false);
-
-                    // Check if knowledge base has not published yet.
-                    if (!hasPublished)
-                    {
-                        this.logger.LogError(ex, "Error while fetching the qna pair: knowledge base may be empty or it has not published yet.");
-                        await turnContext.SendActivityAsync(MessageFactory.Attachment(UnrecognizedInputCard.GetCard(text))).ConfigureAwait(false);
-                        return;
-                    }
-                }
+                // if (((ErrorResponseException)ex).Response.StatusCode == HttpStatusCode.BadRequest)
+                // {
+                //     var knowledgeBaseId = await this.configurationProvider.GetSavedEntityDetailAsync(Constants.KnowledgeBaseEntityId).ConfigureAwait(false);
+                //     var hasPublished = await this.qnaServiceProvider.GetInitialPublishedStatusAsync(knowledgeBaseId).ConfigureAwait(false);
+                //
+                //     // Check if knowledge base has not published yet.
+                //     if (!hasPublished)
+                //     {
+                //         this.logger.LogError(ex, "Error while fetching the qna pair: knowledge base may be empty or it has not published yet.");
+                //         await turnContext.SendActivityAsync(MessageFactory.Attachment(UnrecognizedInputCard.GetCard(text))).ConfigureAwait(false);
+                //         return;
+                //     }
+                // }
 
                 // Throw the error at calling place, if there is any generic exception which is not caught.
                 throw;
