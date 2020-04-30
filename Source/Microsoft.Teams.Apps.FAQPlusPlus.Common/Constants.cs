@@ -78,7 +78,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Common
         /// <summary>
         /// Feedback - text that renders share feedback card.
         /// </summary>
-        public const string ShareFeedback = "pompartilhe seu comentario";
+        public const string ShareFeedback = "compartilhe seu comentario";
 
         /// <summary>
         /// Table name where SME activity details from bot will be saved.
