@@ -562,7 +562,7 @@
     <comment>Texto do botão de "Atualização do histórico".</comment>
   </data>
   <data name="UpdateHistoryDateHeaderText" xml:space="preserve">
-    <value>Data</value>
+    <value>Date</value>
     <comment>Texto cabeçalho para a data no cartão adaptativo do texto de atualização do histórico</comment>
   </data>
   <data name="UpdateHistoryHeadersText" xml:space="preserve">

@@ -1060,7 +1060,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Data.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Date.
         /// </summary>
         public static string UpdateHistoryDateHeaderText {
             get {
