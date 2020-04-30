@@ -270,7 +270,7 @@
     <comment>Texto no cartão de comentário dos especialistas. O exemplo de texto {0} representa o nome da pessoa compartilhando o comentário. O texto de exemplo {1} representa o tipo de comentário.</comment>
   </data>
   <data name="FeedbackDescriptionPlaceholderText" xml:space="preserve">
-    <value>Digite, detalhdamente, seu comentário (máximo de 500 caracteres)</value>
+    <value>Digite, detalhadamente, seu comentário (máximo de 500 caracteres)</value>
     <comment>Texto de exemplo inserido pelo usuário na caixa de texto de comentários.</comment>
   </data>
   <data name="FeedbackRatingRequired" xml:space="preserve">
@@ -498,7 +498,7 @@
     <comment>Botão de ação que faz a chamada à "Visite o Teams"  e mostras as funcionalidades do assistente virtual.</comment>
   </data>
   <data name="TakeATourButtonText" xml:space="preserve">
-    <value>Faça uma visita</value>
+    <value>Conhecer Recursos</value>
     <comment>Botão "Visite o Teams" disponível para os usuários no cartão de boas-vindas, por meio do qual o usuário pode conhecer o Teams e as funcionalidades do Assistente Vritural.</comment>
   </data>
   <data name="TeamChatContent" xml:space="preserve">
@@ -562,11 +562,11 @@
     <comment>Texto do botão de "Atualização do histórico".</comment>
   </data>
   <data name="UpdateHistoryDateHeaderText" xml:space="preserve">
-    <value>Data</value>
+    <value>Date</value>
     <comment>Texto cabeçalho para a data no cartão adaptativo do texto de atualização do histórico</comment>
   </data>
   <data name="UpdateHistoryHeadersText" xml:space="preserve">
-    <value>Nome | Ação | Data</value>
+    <value>Nome|Ação|Date</value>
     <comment>Texto do cabeçalho para o cartão adaptativo de atualização do histórico que mostra o registro das ações realizadas pelos usuários em um par P&amp;R.</comment>
   </data>
   <data name="ViewArticleButtonText" xml:space="preserve">
